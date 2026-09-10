@@ -1,0 +1,58 @@
+{
+  "name": "@op-media-inc/aibl-author-sdk",
+  "version": "1.0.0",
+  "description": "Official TypeScript SDK for the AIBL Author Platform",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx src/client.test.ts",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "aibl",
+    "aibl-author",
+    "sdk",
+    "trpc",
+    "typescript",
+    "api-client"
+  ],
+  "author": "OP Media Inc.",
+  "license": "ISC",
+  "dependencies": {
+    "@trpc/client": "^11.0.0",
+    "@trpc/server": "^11.0.0",
+    "superjson": "^2.2.1",
+    "zod": "^3.24.2 || ^4.3.6"
+  },
+  "devDependencies": {
+    "@aibl-author/api": "*",
+    "@types/node": "^20.14.10",
+    "rimraf": "^6.0.0",
+    "tsup": "^8.4.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.8.2"
+  }
+}
