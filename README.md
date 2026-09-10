@@ -79,6 +79,14 @@ function handlePost(post: PostGetOutput) {
 
 ---
 
+## 🌐 OpenAPI Specification (REST / Polyglot Integration)
+
+For developers using **C# / .NET**, **Python**, **Go**, or standard REST integrations, the complete OpenAPI v3 specification covering all 150+ platform endpoints is bundled:
+* **In this package**: [`./openapi.json`](./openapi.json)
+* **GitHub Releases**: Download `openapi.json` directly from the [GitHub Releases](https://github.com/OPMediaInc/aibl-author-sdk/releases) tab.
+
+---
+
 ## 📄 License
 
 ISC © [OP Media Inc.](https://opmedia.com)
