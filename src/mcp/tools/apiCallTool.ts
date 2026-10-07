@@ -1,7 +1,8 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
-import type { McpServerContext } from '../types.js';
-import { enrichWithUrls } from '../utils/urlHelper.js';
+import { getUntypedClient } from '@trpc/client';
+import type { McpServerContext } from '../types';
+import { enrichWithUrls } from '../utils/urlHelper';
 
 export function registerApiCallTool(server: McpServer, ctx: McpServerContext): void {
   (server as any).registerTool(
@@ -34,7 +35,18 @@ export function registerApiCallTool(server: McpServer, ctx: McpServerContext): v
           throw new Error(`Procedure "${route}" not found on tRPC client.`);
         }
 
+        // Detect whether ctx.client is an HTTP client proxy (@trpc/client) or an in-memory caller / direct callable
+        const isHttpClient = Boolean(
+          typeof getUntypedClient === 'function' && getUntypedClient(ctx.client)
+        );
+
         const executeCall = async (payload: any) => {
+          // 1. In-memory caller (e.g. createCaller(trpcContext)): procedure itself is a callable function
+          if (!isHttpClient && typeof current === 'function') {
+            return await current(payload);
+          }
+
+          // 2. HTTP client proxy (@trpc/client): procedures use .mutate() or .query()
           if (isMutation) {
             if (typeof current.mutate === 'function') {
               return await current.mutate(payload);
@@ -63,7 +75,6 @@ export function registerApiCallTool(server: McpServer, ctx: McpServerContext): v
           }
 
           if (typeof current === 'function') {
-            // Direct in-memory tRPC caller (appRouter.createCaller(ctx))
             return await current(payload);
           }
 

@@ -5,7 +5,7 @@ import {
   type AiblClient,
   type IamMeOutput,
   type PostListBySiteOutput,
-} from './index.js';
+} from './index';
 
 describe('AIBL Author SDK Client Factory', () => {
   it('initializes client with custom baseUrl and token getter', () => {

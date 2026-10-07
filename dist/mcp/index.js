@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
+import { getUntypedClient } from '@trpc/client';
 
 // src/mcp/utils/urlHelper.ts
 function buildFullUrl(baseUrl, relativePath) {
@@ -857,7 +858,13 @@ function registerApiCallTool(server, ctx) {
         if (current === void 0 || current === null) {
           throw new Error(`Procedure "${route}" not found on tRPC client.`);
         }
+        const isHttpClient = Boolean(
+          typeof getUntypedClient === "function" && getUntypedClient(ctx.client)
+        );
         const executeCall = async (payload) => {
+          if (!isHttpClient && typeof current === "function") {
+            return await current(payload);
+          }
           if (isMutation) {
             if (typeof current.mutate === "function") {
               return await current.mutate(payload);
@@ -1050,7 +1057,7 @@ function createAiblMcpServer(options) {
     serverVersion = "1.0.0",
     logger
   } = options;
-  const apiRegistry = options.apiRegistry ?? new ApiRegistryService(logger);
+  const apiRegistry = options.apiRegistry ?? new ApiRegistryService(logger, options.openApiDoc);
   apiRegistry.load();
   const cleanBaseUrl = baseUrl ? baseUrl.replace(/\/+$/, "") : "http://localhost:3000";
   const instructions = buildMcpInstructions(apiRegistry, MCP_CHEAT_SHEET_MANIFEST, cleanBaseUrl);

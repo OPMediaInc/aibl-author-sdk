@@ -1,5 +1,5 @@
-import { ApiRegistryService } from '../api/ApiRegistryService.js';
-import type { CheatSheetSection } from './mcpCheatSheetManifest.js';
+import { ApiRegistryService } from '../api/ApiRegistryService';
+import type { CheatSheetSection } from './mcpCheatSheetManifest';
 
 /**
  * Builds dynamic, OpenAPI-inferred system instructions and API route cheat sheet

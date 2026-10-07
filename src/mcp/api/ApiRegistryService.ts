@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
-import type { ILogger } from '../types.js';
+import type { ILogger } from '../types';
 
 export interface ApiParameterMeta {
   name: string;

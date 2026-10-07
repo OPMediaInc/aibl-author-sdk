@@ -1,11 +1,11 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import type { CreateAiblMcpServerOptions, McpServerContext } from './types.js';
-import { ApiRegistryService } from './api/ApiRegistryService.js';
-import { MCP_CHEAT_SHEET_MANIFEST } from './manifest/mcpCheatSheetManifest.js';
-import { buildMcpInstructions } from './manifest/McpInstructionBuilder.js';
-import { registerApiDescribeTool } from './tools/apiDescribeTool.js';
-import { registerApiCallTool } from './tools/apiCallTool.js';
-import { OpenApiMcpToolAdapter } from './tools/OpenApiMcpToolAdapter.js';
+import type { CreateAiblMcpServerOptions, McpServerContext } from './types';
+import { ApiRegistryService } from './api/ApiRegistryService';
+import { MCP_CHEAT_SHEET_MANIFEST } from './manifest/mcpCheatSheetManifest';
+import { buildMcpInstructions } from './manifest/McpInstructionBuilder';
+import { registerApiDescribeTool } from './tools/apiDescribeTool';
+import { registerApiCallTool } from './tools/apiCallTool';
+import { OpenApiMcpToolAdapter } from './tools/OpenApiMcpToolAdapter';
 
 export function createAiblMcpServer(options: CreateAiblMcpServerOptions): McpServer {
   const {
@@ -16,7 +16,8 @@ export function createAiblMcpServer(options: CreateAiblMcpServerOptions): McpSer
     logger,
   } = options;
 
-  const apiRegistry: ApiRegistryService = options.apiRegistry ?? new ApiRegistryService(logger);
+  const apiRegistry: ApiRegistryService =
+    options.apiRegistry ?? new ApiRegistryService(logger, options.openApiDoc);
   apiRegistry.load();
 
   const cleanBaseUrl = baseUrl ? baseUrl.replace(/\/+$/, '') : 'http://localhost:3000';

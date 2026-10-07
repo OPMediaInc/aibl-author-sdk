@@ -1,5 +1,5 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import type { AppRouter } from '../index.js';
+import type { AppRouter } from '../index';
 
 export interface ILogger {
   debug?: (msg: string, ...args: any[]) => void;
@@ -34,6 +34,7 @@ export interface CreateAiblMcpServerOptions {
   serverName?: string;
   serverVersion?: string;
   apiRegistry?: any;
+  openApiDoc?: any;
   allTools?: boolean;
   tools?: string;
   logger?: ILogger;

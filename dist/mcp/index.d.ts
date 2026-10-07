@@ -41,6 +41,7 @@ interface CreateAiblMcpServerOptions {
     serverName?: string;
     serverVersion?: string;
     apiRegistry?: any;
+    openApiDoc?: any;
     allTools?: boolean;
     tools?: string;
     logger?: ILogger;

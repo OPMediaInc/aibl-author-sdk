@@ -1,8 +1,8 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
-import type { McpServerContext } from '../types.js';
-import { enrichWithUrls } from '../utils/urlHelper.js';
-import type { ApiEndpointMeta } from '../api/ApiRegistryService.js';
+import type { McpServerContext } from '../types';
+import { enrichWithUrls } from '../utils/urlHelper';
+import type { ApiEndpointMeta } from '../api/ApiRegistryService';
 
 /**
  * OpenApiMcpToolAdapter dynamically converts OpenAPI endpoint manifests into

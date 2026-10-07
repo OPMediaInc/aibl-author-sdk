@@ -1,7 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
-import type { McpServerContext } from '../types.js';
-import type { ApiEndpointMeta } from '../api/ApiRegistryService.js';
+import type { McpServerContext } from '../types';
+import type { ApiEndpointMeta } from '../api/ApiRegistryService';
 
 /**
  * Formats a specific endpoint into a clean schema object for AI consumption.

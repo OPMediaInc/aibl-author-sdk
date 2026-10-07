@@ -3,7 +3,7 @@
   "info": {
     "title": "AIBL Author Platform REST API",
     "description": "OpenAPI v3 compliant REST API automatically generated from AIBL Author tRPC routes.",
-    "version": "1.0.3"
+    "version": "1.0.4"
   },
   "servers": [
     {

@@ -1,4 +1,4 @@
-import type { AppRouter } from '../../index.js';
+import type { AppRouter } from '../../index';
 
 /**
  * Derives strongly-typed dot-notation procedure paths from AppRouter.

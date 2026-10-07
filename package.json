@@ -1,6 +1,6 @@
 {
   "name": "@op-media-inc/aibl-author-sdk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Official TypeScript SDK for the AIBL Author Platform",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
