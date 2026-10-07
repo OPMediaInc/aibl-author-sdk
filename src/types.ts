@@ -59,21 +59,9 @@ export type AgentSubmitForReviewInput = RouterInputs["agent"]["submitForReview"]
 export type AgentSubmitForReviewOutput = RouterOutputs["agent"]["submitForReview"];
 export type AgentSubmitForReviewItem = ExtractItem<AgentSubmitForReviewOutput>;
 
-export type AgentAttachKnowledgeSourceInput = RouterInputs["agent"]["attachKnowledgeSource"];
-export type AgentAttachKnowledgeSourceOutput = RouterOutputs["agent"]["attachKnowledgeSource"];
-export type AgentAttachKnowledgeSourceItem = ExtractItem<AgentAttachKnowledgeSourceOutput>;
-
-export type AgentRemoveKnowledgeSourceInput = RouterInputs["agent"]["removeKnowledgeSource"];
-export type AgentRemoveKnowledgeSourceOutput = RouterOutputs["agent"]["removeKnowledgeSource"];
-export type AgentRemoveKnowledgeSourceItem = ExtractItem<AgentRemoveKnowledgeSourceOutput>;
-
-export type AgentStartChatSessionInput = RouterInputs["agent"]["startChatSession"];
-export type AgentStartChatSessionOutput = RouterOutputs["agent"]["startChatSession"];
-export type AgentStartChatSessionItem = ExtractItem<AgentStartChatSessionOutput>;
-
-export type AgentSendMessageInput = RouterInputs["agent"]["sendMessage"];
-export type AgentSendMessageOutput = RouterOutputs["agent"]["sendMessage"];
-export type AgentSendMessageItem = ExtractItem<AgentSendMessageOutput>;
+export type AgentInstallKnowledgeSourceInput = RouterInputs["agent"]["installKnowledgeSource"];
+export type AgentInstallKnowledgeSourceOutput = RouterOutputs["agent"]["installKnowledgeSource"];
+export type AgentInstallKnowledgeSourceItem = ExtractItem<AgentInstallKnowledgeSourceOutput>;
 
 export type AgentDiscardDraftInput = RouterInputs["agent"]["discardDraft"];
 export type AgentDiscardDraftOutput = RouterOutputs["agent"]["discardDraft"];
@@ -94,14 +82,6 @@ export type AgentDeclineInvitationItem = ExtractItem<AgentDeclineInvitationOutpu
 export type AgentDeleteInput = RouterInputs["agent"]["delete"];
 export type AgentDeleteOutput = RouterOutputs["agent"]["delete"];
 export type AgentDeleteItem = ExtractItem<AgentDeleteOutput>;
-
-export type AgentAddAgentDelegationInput = RouterInputs["agent"]["addAgentDelegation"];
-export type AgentAddAgentDelegationOutput = RouterOutputs["agent"]["addAgentDelegation"];
-export type AgentAddAgentDelegationItem = ExtractItem<AgentAddAgentDelegationOutput>;
-
-export type AgentRemoveAgentDelegationInput = RouterInputs["agent"]["removeAgentDelegation"];
-export type AgentRemoveAgentDelegationOutput = RouterOutputs["agent"]["removeAgentDelegation"];
-export type AgentRemoveAgentDelegationItem = ExtractItem<AgentRemoveAgentDelegationOutput>;
 
 export type AgentListEligibleSubAgentsInput = RouterInputs["agent"]["listEligibleSubAgents"];
 export type AgentListEligibleSubAgentsOutput = RouterOutputs["agent"]["listEligibleSubAgents"];
@@ -156,10 +136,6 @@ export type HealthGetSecretMessageInput = RouterInputs["health"]["getSecretMessa
 export type HealthGetSecretMessageOutput = RouterOutputs["health"]["getSecretMessage"];
 export type HealthGetSecretMessageItem = ExtractItem<HealthGetSecretMessageOutput>;
 
-export type HealthRefreshDevTokenInput = RouterInputs["health"]["refreshDevToken"];
-export type HealthRefreshDevTokenOutput = RouterOutputs["health"]["refreshDevToken"];
-export type HealthRefreshDevTokenItem = ExtractItem<HealthRefreshDevTokenOutput>;
-
 // ----------------------------------------------------------------------------
 // 📦 Router: site
 // ----------------------------------------------------------------------------
@@ -186,6 +162,10 @@ export type SiteDeleteTierItem = ExtractItem<SiteDeleteTierOutput>;
 export type SiteGetBySlugInput = RouterInputs["site"]["getBySlug"];
 export type SiteGetBySlugOutput = RouterOutputs["site"]["getBySlug"];
 export type SiteGetBySlugItem = ExtractItem<SiteGetBySlugOutput>;
+
+export type SiteGetBySlugOrIdInput = RouterInputs["site"]["getBySlugOrId"];
+export type SiteGetBySlugOrIdOutput = RouterOutputs["site"]["getBySlugOrId"];
+export type SiteGetBySlugOrIdItem = ExtractItem<SiteGetBySlugOrIdOutput>;
 
 export type SiteGetReaderDataInput = RouterInputs["site"]["getReaderData"];
 export type SiteGetReaderDataOutput = RouterOutputs["site"]["getReaderData"];
@@ -214,6 +194,10 @@ export type SiteListTiersItem = ExtractItem<SiteListTiersOutput>;
 export type SiteRemoveMemberInput = RouterInputs["site"]["removeMember"];
 export type SiteRemoveMemberOutput = RouterOutputs["site"]["removeMember"];
 export type SiteRemoveMemberItem = ExtractItem<SiteRemoveMemberOutput>;
+
+export type SiteLeaveSiteInput = RouterInputs["site"]["leaveSite"];
+export type SiteLeaveSiteOutput = RouterOutputs["site"]["leaveSite"];
+export type SiteLeaveSiteItem = ExtractItem<SiteLeaveSiteOutput>;
 
 export type SiteUpdateMemberRolesInput = RouterInputs["site"]["updateMemberRoles"];
 export type SiteUpdateMemberRolesOutput = RouterOutputs["site"]["updateMemberRoles"];
@@ -297,10 +281,6 @@ export type OrganizationsGetOrganizationBySlugOrIdInput = RouterInputs["organiza
 export type OrganizationsGetOrganizationBySlugOrIdOutput = RouterOutputs["organizations"]["getOrganizationBySlugOrId"];
 export type OrganizationsGetOrganizationBySlugOrIdItem = ExtractItem<OrganizationsGetOrganizationBySlugOrIdOutput>;
 
-export type OrganizationsGetDirectoryInput = RouterInputs["organizations"]["getDirectory"];
-export type OrganizationsGetDirectoryOutput = RouterOutputs["organizations"]["getDirectory"];
-export type OrganizationsGetDirectoryItem = ExtractItem<OrganizationsGetDirectoryOutput>;
-
 export type OrganizationsListMembersInput = RouterInputs["organizations"]["listMembers"];
 export type OrganizationsListMembersOutput = RouterOutputs["organizations"]["listMembers"];
 export type OrganizationsListMembersItem = ExtractItem<OrganizationsListMembersOutput>;
@@ -380,14 +360,6 @@ export type OrganizationsLlmConfigListInput = RouterInputs["organizations"]["llm
 export type OrganizationsLlmConfigListOutput = RouterOutputs["organizations"]["llmConfig"]["list"];
 export type OrganizationsLlmConfigListItem = ExtractItem<OrganizationsLlmConfigListOutput>;
 
-export type OrganizationsLlmConfigPublishToMarketplaceInput = RouterInputs["organizations"]["llmConfig"]["publishToMarketplace"];
-export type OrganizationsLlmConfigPublishToMarketplaceOutput = RouterOutputs["organizations"]["llmConfig"]["publishToMarketplace"];
-export type OrganizationsLlmConfigPublishToMarketplaceItem = ExtractItem<OrganizationsLlmConfigPublishToMarketplaceOutput>;
-
-export type OrganizationsLlmConfigUnpublishFromMarketplaceInput = RouterInputs["organizations"]["llmConfig"]["unpublishFromMarketplace"];
-export type OrganizationsLlmConfigUnpublishFromMarketplaceOutput = RouterOutputs["organizations"]["llmConfig"]["unpublishFromMarketplace"];
-export type OrganizationsLlmConfigUnpublishFromMarketplaceItem = ExtractItem<OrganizationsLlmConfigUnpublishFromMarketplaceOutput>;
-
 export type OrganizationsLlmConfigInstallInput = RouterInputs["organizations"]["llmConfig"]["install"];
 export type OrganizationsLlmConfigInstallOutput = RouterOutputs["organizations"]["llmConfig"]["install"];
 export type OrganizationsLlmConfigInstallItem = ExtractItem<OrganizationsLlmConfigInstallOutput>;
@@ -404,10 +376,6 @@ export type OrganizationsLlmConfigListInstallationsInput = RouterInputs["organiz
 export type OrganizationsLlmConfigListInstallationsOutput = RouterOutputs["organizations"]["llmConfig"]["listInstallations"];
 export type OrganizationsLlmConfigListInstallationsItem = ExtractItem<OrganizationsLlmConfigListInstallationsOutput>;
 
-export type OrganizationsLlmConfigListMarketplaceInput = RouterInputs["organizations"]["llmConfig"]["listMarketplace"];
-export type OrganizationsLlmConfigListMarketplaceOutput = RouterOutputs["organizations"]["llmConfig"]["listMarketplace"];
-export type OrganizationsLlmConfigListMarketplaceItem = ExtractItem<OrganizationsLlmConfigListMarketplaceOutput>;
-
 // ----------------------------------------------------------------------------
 // 📦 Router: organizations.vectorStoreConfig
 // ----------------------------------------------------------------------------
@@ -422,14 +390,6 @@ export type OrganizationsVectorStoreConfigUpdateItem = ExtractItem<Organizations
 export type OrganizationsVectorStoreConfigListInput = RouterInputs["organizations"]["vectorStoreConfig"]["list"];
 export type OrganizationsVectorStoreConfigListOutput = RouterOutputs["organizations"]["vectorStoreConfig"]["list"];
 export type OrganizationsVectorStoreConfigListItem = ExtractItem<OrganizationsVectorStoreConfigListOutput>;
-
-export type OrganizationsVectorStoreConfigPublishToMarketplaceInput = RouterInputs["organizations"]["vectorStoreConfig"]["publishToMarketplace"];
-export type OrganizationsVectorStoreConfigPublishToMarketplaceOutput = RouterOutputs["organizations"]["vectorStoreConfig"]["publishToMarketplace"];
-export type OrganizationsVectorStoreConfigPublishToMarketplaceItem = ExtractItem<OrganizationsVectorStoreConfigPublishToMarketplaceOutput>;
-
-export type OrganizationsVectorStoreConfigUnpublishFromMarketplaceInput = RouterInputs["organizations"]["vectorStoreConfig"]["unpublishFromMarketplace"];
-export type OrganizationsVectorStoreConfigUnpublishFromMarketplaceOutput = RouterOutputs["organizations"]["vectorStoreConfig"]["unpublishFromMarketplace"];
-export type OrganizationsVectorStoreConfigUnpublishFromMarketplaceItem = ExtractItem<OrganizationsVectorStoreConfigUnpublishFromMarketplaceOutput>;
 
 export type OrganizationsVectorStoreConfigInstallInput = RouterInputs["organizations"]["vectorStoreConfig"]["install"];
 export type OrganizationsVectorStoreConfigInstallOutput = RouterOutputs["organizations"]["vectorStoreConfig"]["install"];
@@ -447,10 +407,6 @@ export type OrganizationsVectorStoreConfigListInstallationsInput = RouterInputs[
 export type OrganizationsVectorStoreConfigListInstallationsOutput = RouterOutputs["organizations"]["vectorStoreConfig"]["listInstallations"];
 export type OrganizationsVectorStoreConfigListInstallationsItem = ExtractItem<OrganizationsVectorStoreConfigListInstallationsOutput>;
 
-export type OrganizationsVectorStoreConfigListMarketplaceInput = RouterInputs["organizations"]["vectorStoreConfig"]["listMarketplace"];
-export type OrganizationsVectorStoreConfigListMarketplaceOutput = RouterOutputs["organizations"]["vectorStoreConfig"]["listMarketplace"];
-export type OrganizationsVectorStoreConfigListMarketplaceItem = ExtractItem<OrganizationsVectorStoreConfigListMarketplaceOutput>;
-
 // ----------------------------------------------------------------------------
 // 📦 Router: organizations.doclingServerConfig
 // ----------------------------------------------------------------------------
@@ -465,14 +421,6 @@ export type OrganizationsDoclingServerConfigUpdateItem = ExtractItem<Organizatio
 export type OrganizationsDoclingServerConfigListInput = RouterInputs["organizations"]["doclingServerConfig"]["list"];
 export type OrganizationsDoclingServerConfigListOutput = RouterOutputs["organizations"]["doclingServerConfig"]["list"];
 export type OrganizationsDoclingServerConfigListItem = ExtractItem<OrganizationsDoclingServerConfigListOutput>;
-
-export type OrganizationsDoclingServerConfigPublishToMarketplaceInput = RouterInputs["organizations"]["doclingServerConfig"]["publishToMarketplace"];
-export type OrganizationsDoclingServerConfigPublishToMarketplaceOutput = RouterOutputs["organizations"]["doclingServerConfig"]["publishToMarketplace"];
-export type OrganizationsDoclingServerConfigPublishToMarketplaceItem = ExtractItem<OrganizationsDoclingServerConfigPublishToMarketplaceOutput>;
-
-export type OrganizationsDoclingServerConfigUnpublishFromMarketplaceInput = RouterInputs["organizations"]["doclingServerConfig"]["unpublishFromMarketplace"];
-export type OrganizationsDoclingServerConfigUnpublishFromMarketplaceOutput = RouterOutputs["organizations"]["doclingServerConfig"]["unpublishFromMarketplace"];
-export type OrganizationsDoclingServerConfigUnpublishFromMarketplaceItem = ExtractItem<OrganizationsDoclingServerConfigUnpublishFromMarketplaceOutput>;
 
 export type OrganizationsDoclingServerConfigInstallInput = RouterInputs["organizations"]["doclingServerConfig"]["install"];
 export type OrganizationsDoclingServerConfigInstallOutput = RouterOutputs["organizations"]["doclingServerConfig"]["install"];
@@ -490,10 +438,6 @@ export type OrganizationsDoclingServerConfigListInstallationsInput = RouterInput
 export type OrganizationsDoclingServerConfigListInstallationsOutput = RouterOutputs["organizations"]["doclingServerConfig"]["listInstallations"];
 export type OrganizationsDoclingServerConfigListInstallationsItem = ExtractItem<OrganizationsDoclingServerConfigListInstallationsOutput>;
 
-export type OrganizationsDoclingServerConfigListMarketplaceInput = RouterInputs["organizations"]["doclingServerConfig"]["listMarketplace"];
-export type OrganizationsDoclingServerConfigListMarketplaceOutput = RouterOutputs["organizations"]["doclingServerConfig"]["listMarketplace"];
-export type OrganizationsDoclingServerConfigListMarketplaceItem = ExtractItem<OrganizationsDoclingServerConfigListMarketplaceOutput>;
-
 // ----------------------------------------------------------------------------
 // 📦 Router: iam
 // ----------------------------------------------------------------------------
@@ -501,13 +445,41 @@ export type IamMeInput = RouterInputs["iam"]["me"];
 export type IamMeOutput = RouterOutputs["iam"]["me"];
 export type IamMeItem = ExtractItem<IamMeOutput>;
 
+export type IamGetInvitationDetailsInput = RouterInputs["iam"]["getInvitationDetails"];
+export type IamGetInvitationDetailsOutput = RouterOutputs["iam"]["getInvitationDetails"];
+export type IamGetInvitationDetailsItem = ExtractItem<IamGetInvitationDetailsOutput>;
+
+export type IamUpdateUserProfileInput = RouterInputs["iam"]["updateUserProfile"];
+export type IamUpdateUserProfileOutput = RouterOutputs["iam"]["updateUserProfile"];
+export type IamUpdateUserProfileItem = ExtractItem<IamUpdateUserProfileOutput>;
+
+export type IamRequestPasskeySetupInput = RouterInputs["iam"]["requestPasskeySetup"];
+export type IamRequestPasskeySetupOutput = RouterOutputs["iam"]["requestPasskeySetup"];
+export type IamRequestPasskeySetupItem = ExtractItem<IamRequestPasskeySetupOutput>;
+
+export type IamGetUserSecurityStatusInput = RouterInputs["iam"]["getUserSecurityStatus"];
+export type IamGetUserSecurityStatusOutput = RouterOutputs["iam"]["getUserSecurityStatus"];
+export type IamGetUserSecurityStatusItem = ExtractItem<IamGetUserSecurityStatusOutput>;
+
+export type IamDeletePasskeyCredentialInput = RouterInputs["iam"]["deletePasskeyCredential"];
+export type IamDeletePasskeyCredentialOutput = RouterOutputs["iam"]["deletePasskeyCredential"];
+export type IamDeletePasskeyCredentialItem = ExtractItem<IamDeletePasskeyCredentialOutput>;
+
+export type IamListApiKeysInput = RouterInputs["iam"]["listApiKeys"];
+export type IamListApiKeysOutput = RouterOutputs["iam"]["listApiKeys"];
+export type IamListApiKeysItem = ExtractItem<IamListApiKeysOutput>;
+
+export type IamCreateApiKeyInput = RouterInputs["iam"]["createApiKey"];
+export type IamCreateApiKeyOutput = RouterOutputs["iam"]["createApiKey"];
+export type IamCreateApiKeyItem = ExtractItem<IamCreateApiKeyOutput>;
+
+export type IamRevokeApiKeyInput = RouterInputs["iam"]["revokeApiKey"];
+export type IamRevokeApiKeyOutput = RouterOutputs["iam"]["revokeApiKey"];
+export type IamRevokeApiKeyItem = ExtractItem<IamRevokeApiKeyOutput>;
+
 // ----------------------------------------------------------------------------
 // 📦 Router: workflow
 // ----------------------------------------------------------------------------
-export type WorkflowResolveEffectiveInput = RouterInputs["workflow"]["resolveEffective"];
-export type WorkflowResolveEffectiveOutput = RouterOutputs["workflow"]["resolveEffective"];
-export type WorkflowResolveEffectiveItem = ExtractItem<WorkflowResolveEffectiveOutput>;
-
 export type WorkflowListEligibleParticipantsInput = RouterInputs["workflow"]["listEligibleParticipants"];
 export type WorkflowListEligibleParticipantsOutput = RouterOutputs["workflow"]["listEligibleParticipants"];
 export type WorkflowListEligibleParticipantsItem = ExtractItem<WorkflowListEligibleParticipantsOutput>;
@@ -555,10 +527,6 @@ export type WorkflowSetTierDefaultItem = ExtractItem<WorkflowSetTierDefaultOutpu
 export type WorkflowSubmitForReviewInput = RouterInputs["workflow"]["submitForReview"];
 export type WorkflowSubmitForReviewOutput = RouterOutputs["workflow"]["submitForReview"];
 export type WorkflowSubmitForReviewItem = ExtractItem<WorkflowSubmitForReviewOutput>;
-
-export type WorkflowListPendingReviewsInput = RouterInputs["workflow"]["listPendingReviews"];
-export type WorkflowListPendingReviewsOutput = RouterOutputs["workflow"]["listPendingReviews"];
-export type WorkflowListPendingReviewsItem = ExtractItem<WorkflowListPendingReviewsOutput>;
 
 export type WorkflowActOnReviewRequestInput = RouterInputs["workflow"]["actOnReviewRequest"];
 export type WorkflowActOnReviewRequestOutput = RouterOutputs["workflow"]["actOnReviewRequest"];
@@ -615,10 +583,6 @@ export type PostDeleteInput = RouterInputs["post"]["delete"];
 export type PostDeleteOutput = RouterOutputs["post"]["delete"];
 export type PostDeleteItem = ExtractItem<PostDeleteOutput>;
 
-export type PostListBySitePaginatedInput = RouterInputs["post"]["listBySitePaginated"];
-export type PostListBySitePaginatedOutput = RouterOutputs["post"]["listBySitePaginated"];
-export type PostListBySitePaginatedItem = ExtractItem<PostListBySitePaginatedOutput>;
-
 export type PostListReaderPostsInput = RouterInputs["post"]["listReaderPosts"];
 export type PostListReaderPostsOutput = RouterOutputs["post"]["listReaderPosts"];
 export type PostListReaderPostsItem = ExtractItem<PostListReaderPostsOutput>;
@@ -669,17 +633,9 @@ export type MediaDeleteInput = RouterInputs["media"]["delete"];
 export type MediaDeleteOutput = RouterOutputs["media"]["delete"];
 export type MediaDeleteItem = ExtractItem<MediaDeleteOutput>;
 
-export type MediaChangeScopeInput = RouterInputs["media"]["changeScope"];
-export type MediaChangeScopeOutput = RouterOutputs["media"]["changeScope"];
-export type MediaChangeScopeItem = ExtractItem<MediaChangeScopeOutput>;
-
 export type MediaGetInput = RouterInputs["media"]["get"];
 export type MediaGetOutput = RouterOutputs["media"]["get"];
 export type MediaGetItem = ExtractItem<MediaGetOutput>;
-
-export type MediaRenameInput = RouterInputs["media"]["rename"];
-export type MediaRenameOutput = RouterOutputs["media"]["rename"];
-export type MediaRenameItem = ExtractItem<MediaRenameOutput>;
 
 export type MediaRegenerateMetadataInput = RouterInputs["media"]["regenerateMetadata"];
 export type MediaRegenerateMetadataOutput = RouterOutputs["media"]["regenerateMetadata"];
@@ -707,6 +663,10 @@ export type MarketplaceGetListingItem = ExtractItem<MarketplaceGetListingOutput>
 export type MarketplaceInstallAgentInput = RouterInputs["marketplace"]["installAgent"];
 export type MarketplaceInstallAgentOutput = RouterOutputs["marketplace"]["installAgent"];
 export type MarketplaceInstallAgentItem = ExtractItem<MarketplaceInstallAgentOutput>;
+
+export type MarketplaceInstallApplicationInput = RouterInputs["marketplace"]["installApplication"];
+export type MarketplaceInstallApplicationOutput = RouterOutputs["marketplace"]["installApplication"];
+export type MarketplaceInstallApplicationItem = ExtractItem<MarketplaceInstallApplicationOutput>;
 
 // ----------------------------------------------------------------------------
 // 📦 Router: search
@@ -736,10 +696,6 @@ export type AnalyticsGetSiteOverviewItem = ExtractItem<AnalyticsGetSiteOverviewO
 export type NotificationListMyNotificationsInput = RouterInputs["notification"]["listMyNotifications"];
 export type NotificationListMyNotificationsOutput = RouterOutputs["notification"]["listMyNotifications"];
 export type NotificationListMyNotificationsItem = ExtractItem<NotificationListMyNotificationsOutput>;
-
-export type NotificationListMyTasksInput = RouterInputs["notification"]["listMyTasks"];
-export type NotificationListMyTasksOutput = RouterOutputs["notification"]["listMyTasks"];
-export type NotificationListMyTasksItem = ExtractItem<NotificationListMyTasksOutput>;
 
 export type NotificationMarkReadInput = RouterInputs["notification"]["markRead"];
 export type NotificationMarkReadOutput = RouterOutputs["notification"]["markRead"];
@@ -773,6 +729,18 @@ export type NotificationSetSiteWatchLevelInput = RouterInputs["notification"]["s
 export type NotificationSetSiteWatchLevelOutput = RouterOutputs["notification"]["setSiteWatchLevel"];
 export type NotificationSetSiteWatchLevelItem = ExtractItem<NotificationSetSiteWatchLevelOutput>;
 
+export type NotificationGetPostWatchLevelInput = RouterInputs["notification"]["getPostWatchLevel"];
+export type NotificationGetPostWatchLevelOutput = RouterOutputs["notification"]["getPostWatchLevel"];
+export type NotificationGetPostWatchLevelItem = ExtractItem<NotificationGetPostWatchLevelOutput>;
+
+export type NotificationSetPostWatchLevelInput = RouterInputs["notification"]["setPostWatchLevel"];
+export type NotificationSetPostWatchLevelOutput = RouterOutputs["notification"]["setPostWatchLevel"];
+export type NotificationSetPostWatchLevelItem = ExtractItem<NotificationSetPostWatchLevelOutput>;
+
+export type NotificationGetMyWatchesInput = RouterInputs["notification"]["getMyWatches"];
+export type NotificationGetMyWatchesOutput = RouterOutputs["notification"]["getMyWatches"];
+export type NotificationGetMyWatchesItem = ExtractItem<NotificationGetMyWatchesOutput>;
+
 // ----------------------------------------------------------------------------
 // 📦 Router: defaultInstalls
 // ----------------------------------------------------------------------------
@@ -787,4 +755,31 @@ export type DefaultInstallsCreateDefaultInstallItem = ExtractItem<DefaultInstall
 export type DefaultInstallsDeleteDefaultInstallInput = RouterInputs["defaultInstalls"]["deleteDefaultInstall"];
 export type DefaultInstallsDeleteDefaultInstallOutput = RouterOutputs["defaultInstalls"]["deleteDefaultInstall"];
 export type DefaultInstallsDeleteDefaultInstallItem = ExtractItem<DefaultInstallsDeleteDefaultInstallOutput>;
+
+// ----------------------------------------------------------------------------
+// 📦 Router: application
+// ----------------------------------------------------------------------------
+export type ApplicationRegisterInput = RouterInputs["application"]["register"];
+export type ApplicationRegisterOutput = RouterOutputs["application"]["register"];
+export type ApplicationRegisterItem = ExtractItem<ApplicationRegisterOutput>;
+
+export type ApplicationListMyApplicationsInput = RouterInputs["application"]["listMyApplications"];
+export type ApplicationListMyApplicationsOutput = RouterOutputs["application"]["listMyApplications"];
+export type ApplicationListMyApplicationsItem = ExtractItem<ApplicationListMyApplicationsOutput>;
+
+export type ApplicationGetInput = RouterInputs["application"]["get"];
+export type ApplicationGetOutput = RouterOutputs["application"]["get"];
+export type ApplicationGetItem = ExtractItem<ApplicationGetOutput>;
+
+export type ApplicationDeleteInput = RouterInputs["application"]["delete"];
+export type ApplicationDeleteOutput = RouterOutputs["application"]["delete"];
+export type ApplicationDeleteItem = ExtractItem<ApplicationDeleteOutput>;
+
+export type ApplicationRotateSecretInput = RouterInputs["application"]["rotateSecret"];
+export type ApplicationRotateSecretOutput = RouterOutputs["application"]["rotateSecret"];
+export type ApplicationRotateSecretItem = ExtractItem<ApplicationRotateSecretOutput>;
+
+export type ApplicationUpdateInput = RouterInputs["application"]["update"];
+export type ApplicationUpdateOutput = RouterOutputs["application"]["update"];
+export type ApplicationUpdateItem = ExtractItem<ApplicationUpdateOutput>;
 

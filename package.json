@@ -1,6 +1,6 @@
 {
   "name": "@op-media-inc/aibl-author-sdk",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Official TypeScript SDK for the AIBL Author Platform",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -16,7 +16,19 @@
         "types": "./dist/index.d.ts",
         "default": "./dist/index.cjs"
       }
-    }
+    },
+    "./mcp": {
+      "import": {
+        "types": "./dist/mcp/index.d.ts",
+        "default": "./dist/mcp/index.js"
+      },
+      "require": {
+        "types": "./dist/mcp/index.d.ts",
+        "default": "./dist/mcp/index.cjs"
+      }
+    },
+    "./openapi.json": "./openapi.json",
+    "./package.json": "./package.json"
   },
   "publishConfig": {
     "access": "public"
@@ -29,7 +41,7 @@
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
-    "test": "tsx src/client.test.ts",
+    "test": "tsx src/client.test.ts && tsx src/mcp/server.test.ts",
     "clean": "rimraf dist"
   },
   "keywords": [
@@ -43,6 +55,7 @@
   "author": "OP Media Inc.",
   "license": "ISC",
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "@trpc/client": "^11.0.0",
     "@trpc/server": "^11.0.0",
     "superjson": "^2.2.1",
